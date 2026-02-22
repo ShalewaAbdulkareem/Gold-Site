@@ -16,6 +16,12 @@ import os
 from django.contrib.messages import constants as messages
 from decouple import config
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+GOLD_API_KEY = os.getenv("GOLD_API_KEY")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gold_app',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'gold_app.context_processors.market_prices',
             ],
         },
     },
@@ -132,3 +140,11 @@ STATIC_DIR,
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "market-cache"
+    }
+}

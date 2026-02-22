@@ -1,0 +1,80 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} 
+Get Quote 
+{% endblock title %} 
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+  <h1 class="display-3 text-uppercase text-white mb-3">Get Quote</h1>
+  <div class="d-inline-flex text-white">
+    <h6 class="text-uppercase m-0"><a href="">Home</a></h6>
+    <h6 class="text-white m-0 px-3">/</h6>
+    <h6 class="text-uppercase text-white m-0">Quote</h6>
+  </div>
+</div>
+<!-- Page Header Start -->
+
+<!-- Services Start -->
+<div class="container-fluid bg-light py-6 px-5">
+  <div class="text-center mx-auto mb-5" style="max-width: 600px">
+    <h1 class="display-5 text-uppercase mb-4">
+      Request a <span class="text-primary">Quote</span> 
+    </h1>
+  </div>
+  <div class="row gx-5">
+    <div class="col-lg-4 mb-5 mb-lg-0">
+      <div class="mb-4">
+        <h1 class="display-5 text-uppercase mb-4">
+          Request A <span class="text-primary">Call Back</span>
+        </h1>
+      </div>
+      <p class="mb-5">
+        Submit your request below and our professional team will review your
+        message and respond as soon as possible regarding pricing, investment,
+        or partnership inquiries.
+      </p>
+    </div>
+    <div class="col-lg-8">
+      <div class="bg-light text-center p-5">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                <div class="col-12 col-sm-6">
+                    {{ form.name }}
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    {{ form.email }}
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    {{ form.phone }}
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    {{ form.request_type }}
+                </div>
+
+                <div class="col-12">
+                    {{ form.message }}
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">
+                        Submit Request
+                    </button>
+                </div>
+
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services End -->
+
+{% endblock %}
