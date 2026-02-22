@@ -3,7 +3,7 @@ import requests
 from django.conf import settings
 from .forms import *
 from .models import *
-
+from django.contrib import messages
 # Create your views here.
 
 
@@ -47,7 +47,10 @@ def get_quote(request):
                 message=form.cleaned_data["message"],
             )
 
-            return redirect("gold_app:index")
+            messages.success(request,"Your quote request has been submitted successfully. We will contact you soon.")
+            return redirect("gold_app:quote")
+            
+
     else:
         form = QuoteForm()
-    return render(request, "qoute.html", {"form": form})
+    return render(request, "quote.html", {"form": form})
