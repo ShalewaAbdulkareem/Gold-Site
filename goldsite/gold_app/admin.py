@@ -35,6 +35,12 @@ class ServiceAdmin(admin.ModelAdmin):
     readonly_fields = ("created_at",)
 
 
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug', 'created_at')
+
+admin.site.register(Product, ProductAdmin)
+
+
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):

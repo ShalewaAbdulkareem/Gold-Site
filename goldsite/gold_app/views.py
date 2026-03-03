@@ -39,7 +39,9 @@ def blog(request):
 def detail(request):
     return render(request, 'detail.html')
 
-
+def product(request):
+    products = Product.objects.all()
+    return render(request, 'product.html', {'products': products})
 
 def contact(request):
     if request.method == "POST":

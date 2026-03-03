@@ -41,7 +41,7 @@
                     <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
                     <div class="text-start">
                         <h6 class="text-uppercase fw-bold">Our Office</h6>
-                        <span>123 Street, New York, USA</span>
+                        <span>22B, Oyetola Idowu Street, Ilupeju</span>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
                     <div class="text-start">
                         <h6 class="text-uppercase fw-bold">Email Us</h6>
-                        <span>info@example.com</span>
+                        <span>info@petrosaglobal.com</span>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
                     <div class="text-start">
                         <h6 class="text-uppercase fw-bold">Call Us</h6>
-                        <span>+012 345 6789</span>
+                        <span>+256793575229</span>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,8 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{% url 'gold_app:index' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
-                    <a href="{% url 'gold_app:about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+                    <a href="{% url 'gold_app:about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a>
+                    <a href="{% url 'gold_app:product' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'product' %}active{% endif %}">Product</a>
                     <a href="{% url 'gold_app:service' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'service' %}active{% endif %}">Service</a>
                     <div class="nav-item dropdown">
                         <a href="#" 
@@ -92,10 +93,10 @@
                         <div class="dropdown-menu m-0">
                             <a href="{% url 'gold_app:project' %}" 
                             class="dropdown-item {% if request.resolver_match.url_name == 'project' %}active{% endif %}">
-                            Our Project
+                            CSR
                             </a>
 
-                            <a href="{% url 'gold_app:team' %}" 
+                            <!-- <a href="{% url 'gold_app:team' %}" 
                             class="dropdown-item {% if request.resolver_match.url_name == 'team' %}active{% endif %}">
                             The Team
                             </a>
@@ -103,7 +104,7 @@
                             <a href="{% url 'gold_app:testimonial' %}" 
                             class="dropdown-item {% if request.resolver_match.url_name == 'testimonial' %}active{% endif %}">
                             Testimonial
-                            </a>
+                            </a> -->
                             <a href="" 
                             class="dropdown-item ">
                             Faq
@@ -120,7 +121,7 @@
                             </a> -->
                         </div>
                     </div>
-                    <a href="{% url 'gold_app:contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+                    <a href="{% url 'gold_app:contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact Us</a>
                     <a href="{% url 'gold_app:quote' %}" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Get A Quote <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
@@ -152,9 +153,9 @@
                         <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>ATIL</h1>
                     </a>
                     <p>Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy. Tempor sea ipsum diam  sed clita dolore eos dolores magna erat dolore sed stet justo et dolor.</p>
-                    <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>22B, Oyetola Idowu Street, Ilupeju</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>07038341333</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@petrosaglobal.com</p>
                     <div class="d-flex justify-content-start mt-4">
                         <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-facebook-f"></i></a>
