@@ -1,6 +1,7 @@
-from django.core.cache import cache 
+from django.core.cache import cache
 import requests
 from django.conf import settings
+
 
 def market_prices(request):
 
@@ -30,14 +31,18 @@ def market_prices(request):
                 headers=headers
             ).json()
 
+            price = response.get("price", 0)
+            change = response.get("ch", 0)
+
             market_data["metals"].append({
                 "name": name,
-                "price": response.get("price"),
-                "change": response.get("ch")
+                "price": round(price, 2),
+                "change": round(change, 2)
             })
 
         cache.set("market_data", market_data, 120)
+
         return market_data
 
-    except:
+    except Exception as e:
         return {"metals": []}

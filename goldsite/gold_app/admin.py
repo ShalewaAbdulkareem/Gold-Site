@@ -57,3 +57,8 @@ class TeamAdmin(admin.ModelAdmin):
         return "No Image"
 
     display_image.short_description = "Image"
+
+@admin.register(FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    list_display = ("question", "created_at")
+    search_fields = ("question",)

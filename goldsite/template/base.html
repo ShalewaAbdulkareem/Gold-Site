@@ -105,7 +105,7 @@
                             class="dropdown-item {% if request.resolver_match.url_name == 'testimonial' %}active{% endif %}">
                             Testimonial
                             </a> -->
-                            <a href="" 
+                            <a href="{% url 'gold_app:faq' %}" 
                             class="dropdown-item ">
                             Faq
                             </a>
@@ -127,18 +127,18 @@
             </div>
         </nav>
         <div class="market-box bg-dark text-white text-center py-2">
-            {% for metal in metals %}
-                <span style="margin-right:20px;">
-                    {{ metal.name }}:
-                    ${{ metal.price }}
+        {% for metal in metals %}
+        <span style="margin-right:20px;">
+            {{ metal.name }}:
+            ${{ metal.price|floatformat:2 }}
 
-                    <span style="color:{% if metal.change >= 0 %}lime{% else %}red{% endif %}">
-                        {% if metal.change >= 0 %}↑{% else %}↓{% endif %}
-                        {{ metal.change }}
-                    </span>
-                </span>
-            {% endfor %}
-        </div>
+            <span style="color:{% if metal.change >= 0 %}lime{% else %}red{% endif %};">
+                {% if metal.change >= 0 %}↑{% else %}↓{% endif %}
+                {{ metal.change|floatformat:2 }}
+            </span>
+        </span>
+        {% endfor %}
+    </div>
     </div>
     <!-- Navbar End -->
 

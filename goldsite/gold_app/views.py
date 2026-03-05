@@ -124,3 +124,7 @@ def get_quote(request):
     else:
         form = QuoteForm()
     return render(request, "quote.html", {"form": form})
+
+def faq(request):
+    faqs = FAQ.objects.all()
+    return render(request, "faq.html", {"faqs": faqs})
