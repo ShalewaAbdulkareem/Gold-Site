@@ -113,97 +113,38 @@
         </h1>
         <p>ATIL offers a full range of mining and mineral services, ensuring efficiency, safety, and high-quality results in every project.</p>
     </div>
-    <div class="row g-5">
-        <!-- Mining Operations -->
-        <div class="col-lg-4 col-md-6">
-            <div class="service-item bg-white d-flex flex-column align-items-center text-center">
-                <img class="img-fluid" src="{% static 'img/service-1.jpg' %}" alt="Mining Operations">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-industry text-primary"></i>
-                </div>
-                <div class="px-4 pb-4">
-                    <h4 class="text-uppercase mb-3">Mining Operations</h4>
-                    <p>Efficient and safe extraction of gold and minerals using modern equipment and skilled personnel.</p>
-                    <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
+        <div class="row g-5">
+            {% for service in services %}
 
-        <!-- Exploration & Survey -->
-        <div class="col-lg-4 col-md-6">
-            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                <img class="img-fluid" src="{% static 'img/service-2.jpg' %}" alt="Exploration & Survey">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-map-marker-alt text-primary"></i>
-                </div>
-                <div class="px-4 pb-4">
-                    <h4 class="text-uppercase mb-3">Exploration & Survey</h4>
-                    <p>Geological surveys and exploration to identify rich mineral deposits for future mining projects.</p>
-                    <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white d-flex flex-column align-items-center text-center">
 
-        <!-- Logistics & Transport -->
-        <div class="col-lg-4 col-md-6">
-            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                <img class="img-fluid" src="{% static 'img/service-3.jpg' %}" alt="Logistics & Transport">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-truck text-primary"></i>
-                </div>
-                <div class="px-4 pb-4">
-                    <h4 class="text-uppercase mb-3">Logistics & Transport</h4>
-                    <p>Safe and reliable transport of minerals from mining sites to storage or processing facilities.</p>
-                    <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
+                    <img class="img-fluid" src="{{ service.image.url }}" alt="">
 
-        <!-- Environmental Management -->
-        <div class="col-lg-4 col-md-6">
-            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                <img class="img-fluid" src="{% static 'img/service-4.jpg' %}" alt="Environmental Management">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-leaf text-primary"></i>
-                </div>
-                <div class="px-4 pb-4">
-                    <h4 class="text-uppercase mb-3">Environmental Management</h4>
-                    <p>Ensuring sustainable mining practices and minimizing environmental impact on local ecosystems.</p>
-                    <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
+                    <div class="service-icon bg-white">
+                        <i class="{{ service.icon }} text-primary"></i>
+                    </div>
 
-        <!-- Mineral Processing -->
-        <div class="col-lg-4 col-md-6">
-            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                <img class="img-fluid" src="{% static 'img/service-5.jpg' %}" alt="Mineral Processing">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-cogs text-primary"></i>
-                </div>
-                <div class="px-4 pb-4">
-                    <h4 class="text-uppercase mb-3">Mineral Processing</h4>
-                    <p>High-quality processing of minerals and ores to prepare them for sale or industrial use.</p>
-                    <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">
+                            {{ service.title }}
+                        </h4>
 
-        <!-- Safety & Consultation -->
-        <div class="col-lg-4 col-md-6">
-            <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                <img class="img-fluid" src="{% static 'img/service-6.jpg' %}" alt="Safety & Consultation">
-                <div class="service-icon bg-white">
-                    <i class="fa fa-3x fa-hard-hat text-primary"></i>
-                </div>
-                <div class="px-4 pb-4">
-                    <h4 class="text-uppercase mb-3">Safety & Consultation</h4>
-                    <p>Providing expert guidance and ensuring safety standards are met at all mining sites.</p>
-                    <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p>
+                            {{ service.description|truncatewords:20|safe }}
+                        </p>
+
+                        <a class="btn text-primary" href="">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
+            {% endfor %}
+           
         </div>
-    </div>
 </div>
 <!-- Services End -->
 

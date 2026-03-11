@@ -13,7 +13,11 @@ from django.core.mail import EmailMultiAlternatives
 
 
 def index(request):
-    return render(request, "index.html")
+    services = Service.objects.all()[:3]
+    context = {
+        'services':services,
+    }
+    return render(request, "index.html", context)
 
 def about(request):
     members = Team.objects.all()[:3]  
