@@ -269,3 +269,32 @@
     background: var(--primary);
     transform: skew(40deg);
 }
+
+
+.mission-vision-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+.mission-vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.mission-vision-card .icon {
+    font-size: 28px;
+}
+.mission-vision-card .mission-bg-shape,
+.mission-vision-card .vision-bg-shape {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -20%;
+    left: -10%;
+    background: rgba(255, 145, 0, 0.05);
+    transform: rotate(-20deg);
+    z-index: 0;
+}
+.mission-vision-card p {
+    position: relative;
+    z-index: 1;
+}
