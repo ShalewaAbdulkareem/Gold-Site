@@ -62,3 +62,14 @@ class TeamAdmin(admin.ModelAdmin):
 class FAQAdmin(admin.ModelAdmin):
     list_display = ("question", "created_at")
     search_fields = ("question",)
+
+
+
+class CSRProjectAdmin(admin.ModelAdmin):
+    list_display = ('title', 'category', 'created_at')
+    list_filter = ('category',)
+    search_fields = ('title', 'created_at')
+
+
+admin.site.register(CSRProject, CSRProjectAdmin)
+admin.site.register(CSRCategory)

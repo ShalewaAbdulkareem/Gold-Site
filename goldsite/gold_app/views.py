@@ -14,8 +14,10 @@ from django.core.mail import EmailMultiAlternatives
 
 def index(request):
     services = Service.objects.all()[:3]
+    faqs = FAQ.objects.all()
     context = {
         'services':services,
+        "faqs": faqs,
     }
     return render(request, "index.html", context)
 
@@ -24,7 +26,16 @@ def about(request):
     return render(request, "about.html", { "members": members })
 
 def project(request):
-    return render(request, 'project.html')
+    categories = CSRCategory.objects.all()
+    projects = CSRProject.objects.all()
+
+    context = {
+        'projects': projects,
+        'categories': categories
+    }
+
+
+    return render(request, 'project.html', context)
 
 def service(request):
     services = Service.objects.all()
@@ -129,6 +140,3 @@ def get_quote(request):
         form = QuoteForm()
     return render(request, "quote.html", {"form": form})
 
-def faq(request):
-    faqs = FAQ.objects.all()
-    return render(request, "faq.html", {"faqs": faqs})
