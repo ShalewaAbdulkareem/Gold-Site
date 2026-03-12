@@ -82,7 +82,7 @@
                     <a href="{% url 'gold_app:about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a>
                     <a href="{% url 'gold_app:product' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'product' %}active{% endif %}">Product</a>
                     <a href="{% url 'gold_app:service' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'service' %}active{% endif %}">Service</a>
-                   <a href="{% url 'gold_app:project' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'project' %}active{% endif %}"> CSR</a>
+                   <a href="{% url 'gold_app:csr' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'csr' %}active{% endif %}"> CSR</a>
                     <a href="{% url 'gold_app:contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact Us</a>
                     <a href="{% url 'gold_app:quote' %}" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Get A Quote <i class="bi bi-arrow-right"></i></a>
                 </div>

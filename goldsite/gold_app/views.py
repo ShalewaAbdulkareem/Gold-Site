@@ -15,9 +15,11 @@ from django.core.mail import EmailMultiAlternatives
 def index(request):
     services = Service.objects.all()[:3]
     faqs = FAQ.objects.all()
+    testimonials = Testimonial.objects.all()
     context = {
         'services':services,
         "faqs": faqs,
+        'testimonials': testimonials,
     }
     return render(request, "index.html", context)
 
@@ -25,17 +27,17 @@ def about(request):
     members = Team.objects.all()[:3]  
     return render(request, "about.html", { "members": members })
 
-def project(request):
+def csr(request):
     categories = CSRCategory.objects.all()
-    projects = CSRProject.objects.all()
+    csr = CSRProject.objects.all()
 
     context = {
-        'projects': projects,
+        'csr': csr,
         'categories': categories
     }
 
 
-    return render(request, 'project.html', context)
+    return render(request, 'csr.html', context)
 
 def service(request):
     services = Service.objects.all()

@@ -73,3 +73,8 @@ class CSRProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(CSRProject, CSRProjectAdmin)
 admin.site.register(CSRCategory)
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'profession', 'created_at')
