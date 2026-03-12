@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FD5D14;
-    --secondary: #FDBE33;
+    --primary: #D3AF37;
+    --secondary: #FFFD70;
     --light: #F4F6F8;
     --dark: #040F28;
 }
@@ -191,6 +191,18 @@
     background-position-y: top;
 }
 
+.page-header-about {
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background: linear-gradient(rgba(4, 15, 40, .7), rgba(4, 15, 40, .7)), url(../img/about-g6.jpg) center center no-repeat;
+    background-size: cover;
+    background-position-y: 70%;
+}
+
 .service-item .service-icon {
     margin-top: -50px;
     width: 100px;
@@ -367,4 +379,48 @@
 
 .product-btn:hover{
     letter-spacing: 1px;
+}
+
+.hero-section{
+    position:relative;
+    height:500px;
+    background-image:url(../img/home-gg7.jpg);
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+    position:relative;
+    color:white;
+    max-width:800px;
+    padding:20px;
+}
+
+.hero-subtitle{
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.hero-title{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero-text{
+    font-size:18px;
+    opacity:0.9;
 }
