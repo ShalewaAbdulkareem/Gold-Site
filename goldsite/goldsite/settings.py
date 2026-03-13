@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GOLD_API_KEY = os.getenv("GOLD_API_KEY")
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,6 +29,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'template')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' 
+GOLD_API_KEY = os.getenv("GOLD_API_KEY")
 
 
 # Quick-start development settings - unsuitable for production
@@ -83,6 +84,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',

@@ -4169,7 +4169,7 @@ fieldset:disabled .btn {
   }
 }
 .accordion-button:not(.collapsed) {
-  color: #e45412;
+  color: #ffd504;
   background-color: #ffefe8;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
 }
@@ -4200,7 +4200,7 @@ fieldset:disabled .btn {
   z-index: 3;
   border-color: #feae8a;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(253, 93, 20, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(250, 218, 5, 0.25);
 }
 .accordion-header {
   margin-bottom: 0;

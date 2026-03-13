@@ -16,9 +16,9 @@
                     <img class="w-100" src="{% static 'img/g1.webp' %}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
-                            <h1 class="display-2 text-uppercase text-white mb-md-4">Welcome to ATIL Mining</h1>
-                            <a href="{% url 'gold_app:quote' %}" class="btn btn-primary py-md-3 px-md-5 mt-2">Get A Quote</a>
+                            <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block" data-aos="fade-up"></i>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4"data-aos="fade-up">Welcome to ATIL Mining</h1>
+                            <a href="{% url 'gold_app:quote' %}" class="btn btn-primary py-md-3 px-md-5 mt-2"data-aos="fade-down">Get A Quote</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,8 @@
         <div class="row g-5">
             <div class="col-lg-7">
                 <!-- Hero / Heading -->
-                <h1 class="display-5 text-uppercase mb-4">
+                <h1 class="display-5 text-uppercase mb-4" data-aos="fade-down"
+     data-aos-duration="1000">
                     We are <span class="text-primary">ATIL</span>, Leaders in Mining
                 </h1>
     
@@ -72,14 +73,14 @@
                 <!-- Features / Highlights -->
                 <div class="row gx-5 py-2">
                     <div class="col-sm-6 mb-2">
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Efficient Mining Operations</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Experienced Team</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Reliable Supply Chain</p>
+                        <p class="fw-bold mb-2" data-aos="fade-left"><i class="fa fa-check text-primary me-3"></i>Efficient Mining Operations</p>
+                        <p class="fw-bold mb-2" data-aos="fade-left"><i class="fa fa-check text-primary me-3"></i>Experienced Team</p>
+                        <p class="fw-bold mb-2" data-aos="fade-left"><i class="fa fa-check text-primary me-3"></i>Reliable Supply Chain</p>
                     </div>
                     <div class="col-sm-6 mb-2">
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Sustainable Practices</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>High-Quality Minerals</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Modern Equipment</p>
+                        <p class="fw-bold mb-2" data-aos="fade-right"><i class="fa fa-check text-primary me-3"></i>Sustainable Practices</p>
+                        <p class="fw-bold mb-2" data-aos="fade-right"><i class="fa fa-check text-primary me-3"></i>High-Quality Minerals</p>
+                        <p class="fw-bold mb-2" data-aos="fade-right"><i class="fa fa-check text-primary me-3"></i>Modern Equipment</p>
                     </div>
                 </div>
     
@@ -94,7 +95,8 @@
             </div>
     
             <!-- Image section -->
-            <div class="col-lg-5 pb-5" style="min-height: 400px;">
+            <div class="col-lg-5 pb-5" style="min-height: 400px;" data-aos="fade-up"
+     data-aos-duration="2000">
                 <div class="position-relative bg-dark-radial h-100 ms-5">
                     <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="{% static 'img/about.jpg' %}" style="object-fit: cover;" alt="Mining Operations">
                 </div>
@@ -107,7 +109,7 @@
 
 <!-- Services Start -->
 <div class="container-fluid bg-light py-6 px-5">
-    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+    <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-down">
         <h1 class="display-5 text-uppercase mb-4">
             Our <span class="text-primary">Mining Services</span>
         </h1>
@@ -116,7 +118,7 @@
         <div class="row g-5">
             {% for service in services %}
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
                 <div class="service-item bg-white d-flex flex-column align-items-center text-center">
 
                     <img class="img-fluid" src="{{ service.image.url }}" alt="">
@@ -153,7 +155,9 @@
     <!-- About Start -->
     <div class="container-fluid py-6 px-5">
         <div class="row g-5">
-            <div class="col-lg-7">
+            <div class="col-lg-7"  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                 <!-- Hero / Heading -->
                 <h1 class="display-5 text-uppercase mb-4">
                     Why Choose <span class="text-primary">Us</span>
@@ -178,9 +182,11 @@
             </div>
     
             <!-- Image section -->
-            <div class="col-lg-5 pb-5" style="min-height: 400px;">
+            <div class="col-lg-5 pb-5" style="min-height: 400px;"  data-aos="fade-right"
+     data-aos-offset="200"
+     data-aos-easing="ease-in-sine">
                 <div class="position-relative bg-dark-radial h-100 ms-5">
-                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="{% static 'img/service-3.jpg' %}" style="object-fit: cover;" alt="Mining Operations">
+                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="{% static 'img/homee.jpg' %}" style="object-fit: cover;" alt="Mining Operations">
                 </div>
             </div>
         </div>
@@ -192,57 +198,76 @@
   
 
 <!-- Testimonial Start -->
-<div class="container-fluid bg-light py-6 px-5">
-    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-        <h1 class="display-5 text-uppercase mb-4">What Our <span class="text-primary">Happy Cleints</span> Say!!!</h1>
-    </div>
-    <div class="row gx-0 align-items-center">
-        <div class="col-xl-4 col-lg-5 d-none d-lg-block">
-            <img class="img-fluid w-100 h-100" src="{% static 'img/testimonial.jpg' %}">
+    <div class="container-fluid testimonial-hero py-6 px-5">
+
+    <div class="container-content">
+
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase text-white mb-4">
+                What Our <span class="text-primary">Happy Clients</span> Say
+            </h1>
         </div>
-        <div class="col-xl-8 col-lg-7 col-md-12">
-            <div class="testimonial bg-light">
-                <div class="owl-carousel testimonial-carousel">
+
+        <div class="row gx-0 align-items-center">
+
+            <div class="col-xl-4 col-lg-5 d-none d-lg-block" data-aos="zoom-in-right">
+                <img class="img-fluid w-100 h-100 rounded"
+                    src="{% static 'img/testi.jpg' %}">
+            </div>
+
+            <div class="col-xl-8 col-lg-7 col-md-12" data-aos="zoom-out-right">
+
+                <div class="testimonial bg-white p-4 rounded shadow">
+
+                    <div class="owl-carousel testimonial-carousel">
+
                     {% for testimonial in testimonials %}
 
                     <div class="row gx-4 align-items-center">
-                    
+
                         <div class="col-xl-4 col-lg-5 col-md-5">
-                            <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0"
-                                 src="{{ testimonial.image.url }}" alt="">
+                            <img class="img-fluid rounded-circle p-2 shadow"
+                                src="{{ testimonial.image.url }}" alt="">
                         </div>
-                    
+
                         <div class="col-xl-8 col-lg-7 col-md-7">
-                    
+
                             <h4 class="text-uppercase mb-0">
                                 {{ testimonial.name }}
                             </h4>
-                    
-                            <p>
+
+                            <p class="text-muted">
                                 {{ testimonial.profession }}
                             </p>
-                    
+
                             <p class="fs-5 mb-0">
-                                <i class="fa fa-2x fa-quote-left text-primary me-2"></i>
+                                <i class="fa fa-quote-left text-primary me-2"></i>
                                 {{ testimonial.message }}
                             </p>
-                    
+
                         </div>
-                    
+
                     </div>
-                    
+
                     {% endfor %}
-                    
+
                     </div>
+
+                </div>
+
             </div>
+
         </div>
+
     </div>
-    <!-- Testimonial End -->
+
+    </div>
     <div class="container-fluid py-6 ">
         <section class="hero-section">
             <div class="hero-overlay"></div>
 
-            <div class="hero-content text-center">
+            <div class="hero-content text-center" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
                 <h4 class=" text-uppercase mb-4 text-white">
                     Let's Be Great Together
                 </h4>
@@ -263,7 +288,8 @@
     <!-- FAQ Start -->
     <div class="container py-6 px-5">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 text-uppercase mb-4">Frequently Asked <span class="text-primary">Questions</span></h1>
+            <h1 class="display-5 text-uppercase mb-4"data-aos="fade-down"
+     data-aos-anchor-placement="top-bottom">Frequently Asked <span class="text-primary">Questions</span></h1>
         </div>
         <div class="accordion" id="faqAccordion">
 

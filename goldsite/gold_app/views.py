@@ -25,7 +25,8 @@ def index(request):
 
 def about(request):
     members = Team.objects.all()[:3]  
-    return render(request, "about.html", { "members": members })
+    testimonials = Testimonial.objects.all()
+    return render(request, "about.html", { "members": members, "testimonials": testimonials })
 
 def csr(request):
     categories = CSRCategory.objects.all()
@@ -41,7 +42,8 @@ def csr(request):
 
 def service(request):
     services = Service.objects.all()
-    return render(request, "service.html", {"services": services})
+    testimonials = Testimonial.objects.all()
+    return render(request, "service.html", {"services": services, "testimonials": testimonials})
 
 def team(request):
     members = Team.objects.all()
@@ -58,7 +60,8 @@ def detail(request):
 
 def product(request):
     products = Product.objects.all()
-    return render(request, 'product.html', {'products': products})
+    testimonials = Testimonial.objects.all()
+    return render(request, 'product.html', {'products': products, 'testimonials': testimonials})
 
 def contact(request):
     if request.method == "POST":
