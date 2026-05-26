@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Gallery
+{% endblock title %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header-about">
+    <h1 class="display-3 text-uppercase text-white mb-3">Gallery</h1>
+    <div class="d-inline-flex text-white">
+        <h6 class="text-uppercase m-0"><a href="">Home</a></h6>
+        <h6 class="text-white m-0 px-3">/</h6>
+        <h6 class="text-uppercase text-white m-0">Gallery</h6>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Gallery Start -->
+
+<!-- Gallery Start -->
+<div class="container-fluid py-6 px-5">
+
+    <!-- Heading -->
+    <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+        <h1 class="display-5 text-uppercase mb-4">
+            Explore <span class="text-primary">Uganda</span> Through Our Gallery
+        </h1>
+
+        <p>
+            Discover unforgettable wildlife adventures, scenic landscapes,
+            safari experiences, student tours, and the vibrant beauty of Uganda.
+        </p>
+    </div>
+
+    <!-- CATEGORY FILTERS -->
+    <div class="text-center mb-5">
+
+        <button class="btn btn-outline-primary active filter-btn m-1"
+                data-filter="all">
+            All
+        </button>
+
+        <button class="btn btn-outline-primary filter-btn m-1"
+                data-filter="wildlife">
+            Wildlife
+        </button>
+
+        <button class="btn btn-outline-primary filter-btn m-1"
+                data-filter="game_drives">
+            Game Drives
+        </button>
+
+        <button class="btn btn-outline-primary filter-btn m-1"
+                data-filter="nile_river">
+            Nile River
+        </button>
+
+        <button class="btn btn-outline-primary filter-btn m-1"
+                data-filter="safari_lodges">
+            Safari Lodges
+        </button>
+
+        <button class="btn btn-outline-primary filter-btn m-1"
+                data-filter="kampala">
+            Kampala
+        </button>
+
+        <button class="btn btn-outline-primary filter-btn m-1"
+                data-filter="student_tours">
+            Student Tours
+        </button>
+
+    </div>
+
+    <!-- GALLERY GRID -->
+    <div class="row g-4" id="gallery-container">
+
+        {% for gallery in galleries %}
+
+       <div class="col-lg-4 col-md-6 gallery-item"
+     data-category="{{ gallery.category }}">
+
+    <div class="position-relative overflow-hidden rounded shadow-sm gallery-card">
+
+        <!-- Entire image clickable -->
+        <a href="{{ gallery.image.url }}"
+           data-lightbox="gallery"
+           data-title="{{ gallery.title }}">
+
+            <img src="{{ gallery.image.url }}"
+                 class="img-fluid w-100"
+                 style="height:320px; object-fit:cover;">
+
+            <!-- Overlay -->
+            <div class="gallery-overlay">
+
+                <div class="overlay-icon">
+                    <i class="fa fa-search-plus"></i>
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+        
+
+        {% endfor %}
+
+    </div>
+    <!-- VIDEO SECTION START -->
+<div class="container-fluid py-6 px-5">
+
+    <div class="text-center mx-auto mb-5" style="max-width:700px;">
+
+        <h1 class="display-5 text-uppercase mb-4">
+            Watch Our <span class="text-primary">Travel Experiences</span>
+        </h1>
+
+        <p>
+            Experience Uganda through exciting safari adventures,
+            wildlife encounters, cultural tours, and unforgettable journeys.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        {% for video in videos %}
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="position-relative overflow-hidden rounded shadow-sm video-card">
+
+                <a href="{{ video.video_url }}"
+                   target="_blank">
+
+                    <img src="{{ video.thumbnail.url }}"
+                         class="img-fluid w-100"
+                         style="height:320px; object-fit:cover;">
+
+                    <div class="video-overlay">
+
+                        <div class="play-icon">
+                            <i class="fa fa-play"></i>
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="bg-light text-center p-3">
+
+                <h5 class="text-uppercase mb-1">
+                    {{ video.title }}
+                </h5>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+<!-- VIDEO SECTION END -->
+
+</div>
+<!-- Gallery End -->
+
+{% endblock %}

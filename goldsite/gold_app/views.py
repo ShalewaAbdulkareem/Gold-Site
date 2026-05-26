@@ -145,3 +145,13 @@ def get_quote(request):
         form = QuoteForm()
     return render(request, "quote.html", {"form": form})
 
+def gallery(request):
+
+    galleries = Gallery.objects.all().order_by("-created_at")
+
+    videos = Video.objects.all()
+
+    return render(request, "gallery.html", {
+        "galleries": galleries,
+        "videos": videos,
+    })

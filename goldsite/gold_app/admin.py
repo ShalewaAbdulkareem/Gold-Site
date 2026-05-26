@@ -78,3 +78,85 @@ admin.site.register(CSRCategory)
 class TestimonialAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'profession', 'created_at')
+
+
+
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "category",
+        "preview",
+        "created_at",
+    )
+
+    list_filter = (
+        "category",
+        "created_at",
+    )
+
+    search_fields = (
+        "title",
+        "category",
+    )
+
+    readonly_fields = (
+        "preview",
+        "created_at",
+    )
+
+    fieldsets = (
+        ("Gallery Information", {
+            "fields": (
+                "title",
+                "category",
+                "image",
+                "preview",
+            )
+        }),
+
+        ("Dates", {
+            "fields": (
+                "created_at",
+            )
+        }),
+    )
+
+    def preview(self, obj):
+
+        if obj.image:
+            return format_html(
+                '<img src="{}" width="120" '
+                'style="border-radius:8px; object-fit:cover;" />',
+                obj.image.url
+            )
+
+        return "No Image"
+
+    preview.short_description = "Image Preview"    
+
+
+
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "preview",
+        "created_at",
+    )
+
+    search_fields = ("title",)
+
+    def preview(self, obj):
+
+        if obj.thumbnail:
+            return format_html(
+                '<img src="{}" width="100" style="border-radius:8px;" />',
+                obj.thumbnail.url
+            )
+
+        return "No Thumbnail"
+
+    preview.short_description = "Thumbnail"

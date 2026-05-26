@@ -102,3 +102,36 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Gallery(models.Model):
+
+    CATEGORY_CHOICES = [
+        ("wildlife", "Wildlife"),
+        ("game_drives", "Game Drives"),
+        ("nile_river", "Nile River"),
+        ("safari_lodges", "Safari Lodges"),
+        ("kampala", "Kampala"),
+        ("student_tours", "Student Tours"),
+    ]
+
+    title = models.CharField(max_length=200)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+    image = models.ImageField(upload_to="gallery/")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+    
+class Video(models.Model):
+
+    title = models.CharField(max_length=200)
+
+    thumbnail = models.ImageField(upload_to="videos/")
+
+    video_url = models.URLField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
