@@ -1,3 +1,4 @@
+from django.utils.text import slugify
 from django.db import models
 from tinymce.models import HTMLField
 
@@ -132,6 +133,36 @@ class Video(models.Model):
     video_url = models.URLField()
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+
+class TourPackage(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, blank=True)
+    image = models.ImageField(upload_to="tour-packages/")
+    duration = models.CharField(max_length=100, help_text="e.g. 3 Days / 2 Nights" )
+    location = models.CharField( max_length=200)
+    price = models.DecimalField(max_digits=12, decimal_places=2)
+    description = HTMLField()
+    itinerary = HTMLField(help_text="Day-by-day schedule")
+    included = HTMLField(help_text="What's included")
+    excluded = HTMLField(help_text="What's excluded")
+    featured = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True )
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def save(self, *args, **kwargs):
+
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

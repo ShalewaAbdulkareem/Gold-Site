@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Contact Page
+{% endblock title %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header-tour mb-5">
+    <h1 class="display-3 text-uppercase text-white mb-3">Travel & Tours</h1>
+    <div class="d-inline-flex text-white">
+        <h6 class="text-uppercase m-0"><a href="">Home</a></h6>
+        <h6 class="text-white m-0 px-3">/</h6>
+        <h6 class="text-uppercase text-white m-0">Travel & Tours</h6>
+    </div>
+</div>
+<!-- Page Header Start -->
+
+<div class="container-fluid py-6 px-5">
+
+    <div class="row align-items-center g-5">
+
+        <!-- TEXT -->
+        <div class="col-lg-6">
+
+            <h1 class="display-5 text-uppercase mb-4">
+                Uganda Travel & <span class="text-primary">Safari Experiences</span>
+            </h1>
+
+            <p class="mb-4">
+                We provide complete travel solutions for tourists, students,
+                organizations, and corporate groups visiting Uganda. From visa
+                processing and flight bookings to airport transfers, safari
+                adventures, and educational tours, we handle every detail of
+                your journey with professionalism and care.
+            </p>
+
+            <p class="mb-4">
+                Whether you're planning a wildlife safari, a cultural
+                exploration, a student excursion, or a corporate retreat,
+                our experienced team ensures a seamless travel experience from
+                arrival to departure. We combine local expertise, trusted
+                partnerships, and personalized service to help you discover
+                the very best of Uganda.
+            </p>
+
+            <div class="row gy-2">
+
+                <div class="col-sm-6">
+                    <p>
+                        <i class="fa fa-check text-primary me-2"></i>
+                        Visa Processing
+                    </p>
+                </div>
+
+                <div class="col-sm-6">
+                    <p>
+                        <i class="fa fa-check text-primary me-2"></i>
+                        Safari Adventures
+                    </p>
+                </div>
+
+                <div class="col-sm-6">
+                    <p>
+                        <i class="fa fa-check text-primary me-2"></i>
+                        Airport Transfers
+                    </p>
+                </div>
+
+                <div class="col-sm-6">
+                    <p>
+                        <i class="fa fa-check text-primary me-2"></i>
+                        Educational Tours
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGES -->
+        <div class="col-lg-6">
+
+            <div class="travel-images">
+
+                <img src="https://plus.unsplash.com/premium_photo-1661870399335-f5efe423b78d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2FmYXJpfGVufDB8fDB8fHww"
+                     class="main-image"
+                     alt="Safari">
+
+                <img src="https://images.unsplash.com/photo-1549366021-9f761d450615"
+                     class="small-image"
+                     alt="Uganda Tour">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="container-fluid py-6 px-5 bg-dark">
+
+    <div class="text-center mb-5">
+        <h1 class="display-5 text-uppercase text-white mb-4">
+            Our  <span class="text-primary">Travel</span> Services
+        </h1>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+            <div class="service-item text-center p-4 bg-white shadow">
+                <i class="fa fa-passport fa-3x text-primary mb-3"></i>
+                <h5>Visa Processing</h5>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="service-item text-center p-4 bg-white shadow">
+                <i class="fa fa-plane fa-3x text-primary mb-3"></i>
+                <h5>Flight Booking</h5>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="service-item text-center p-4 bg-white shadow">
+                <i class="fa fa-hotel fa-3x text-primary mb-3"></i>
+                <h5>Hotel Reservation</h5>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="service-item text-center p-4 bg-white shadow">
+                <i class="fa fa-car fa-3x text-primary mb-3"></i>
+                <h5>Airport Transfers</h5>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid py-6 px-5">
+
+    <div class="text-center mb-5">
+        <h1 class="display-5 text-uppercase">
+            Tour <span class="text-primary">Packages</span>
+        </h1>
+        <p>
+            Explore Uganda through carefully curated travel experiences.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        {% for package in packages %}
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="card border-0 shadow h-100">
+
+                <img src="{{ package.image.url }}"
+                     class="card-img-top"
+                     style="height:250px;object-fit:cover;">
+
+                <div class="card-body">
+
+                    <h4>{{ package.title }}</h4>
+
+                    <p>
+                        <strong>Duration:</strong>
+                        {{ package.duration }}
+                    </p>
+
+                    <p>
+                        {{ package.description|striptags|truncatewords:20 }}
+                    </p>
+
+                    <a href="{% url 'gold_app:tour_package_detail' package.slug %}"
+                       class="btn btn-primary">
+
+                        View Package
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<div class="container-fluid py-6 px-5 bg-light">
+
+    <div class="text-center mb-5">
+        <h1 class="display-5 text-uppercase">
+            Travel Gallery
+        </h1>
+    </div>
+
+    <div class="row g-4">
+
+        {% for gallery in galleries|slice:":6" %}
+
+        <div class="col-lg-4 col-md-6">
+
+            <a href="{{ gallery.image.url }}"
+               data-lightbox="travel-gallery">
+
+                <img src="{{ gallery.image.url }}"
+                     class="img-fluid rounded shadow">
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="{% url 'gold_app:gallery' %}"
+           class="btn btn-primary">
+
+            View Full Gallery
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="container-fluid py-6 px-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="bg-light p-5 shadow">
+
+                <h2 class="text-uppercase mb-4 text-center">
+                    Plan Your Uganda Trip
+                </h2>
+
+                <form>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Full Name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Email Address">
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Nationality">
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="month"
+                                   class="form-control">
+                        </div>
+
+                        <div class="col-12">
+
+                            <select class="form-control">
+
+                                <option>
+                                    Select Destination
+                                </option>
+
+                                <option>Kampala</option>
+                                <option>Jinja</option>
+                                <option>Entebbe</option>
+                                <option>Western Uganda</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <textarea
+                                rows="5"
+                                class="form-control"
+                                placeholder="Activities or things you would like to do">
+                            </textarea>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <button class="btn btn-primary w-100 py-3">
+
+                                Request Travel Quote
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+ 

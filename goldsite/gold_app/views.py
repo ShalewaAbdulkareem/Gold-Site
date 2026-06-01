@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 import requests
+from django.shortcuts import get_object_or_404
 from django.conf import settings
 from .forms import *
 from .models import *
@@ -155,3 +156,39 @@ def gallery(request):
         "galleries": galleries,
         "videos": videos,
     })
+
+
+def travel_tours(request):
+
+    # services = TravelService.objects.all()
+
+    packages = TourPackage.objects.all()
+
+    galleries = Gallery.objects.all()[:6]
+
+    context = {
+        # "services": services,
+        "packages": packages,
+        "galleries": galleries,
+    }
+
+    return render(
+        request,
+        "travel-tours.html",
+        context
+    )
+
+def tour_package_detail(request, slug):
+
+    package = get_object_or_404(
+        TourPackage,
+        slug=slug
+    )
+
+    return render(
+        request,
+        "tour-package-detail.html",
+        {
+            "package": package
+        }
+    )

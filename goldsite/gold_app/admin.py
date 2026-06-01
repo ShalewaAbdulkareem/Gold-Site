@@ -160,3 +160,22 @@ class VideoAdmin(admin.ModelAdmin):
         return "No Thumbnail"
 
     preview.short_description = "Thumbnail"
+
+@admin.register(TourPackage)
+class TourPackageAdmin(admin.ModelAdmin):
+
+    list_display = ("title", "location", "duration","price","featured", "created_at") 
+
+    list_filter = (
+        "featured",
+        "location",
+    )
+
+    search_fields = (
+        "title",
+        "location",
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }

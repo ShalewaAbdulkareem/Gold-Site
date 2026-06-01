@@ -82,7 +82,57 @@
                     <a href="{% url 'gold_app:index' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
                     <a href="{% url 'gold_app:about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a>
                     <a href="{% url 'gold_app:product' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'product' %}active{% endif %}">Product</a>
-                    <a href="{% url 'gold_app:service' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'service' %}active{% endif %}">Service</a>
+                   <div class="nav-item dropdown">
+
+                        <a href="#"
+                        class="nav-link dropdown-toggle 
+                        {% if request.resolver_match.url_name in 'mining mineral_trading travel_tours' %}
+                        active
+                        {% endif %}"
+                        data-bs-toggle="dropdown">
+
+                            Services
+
+                        </a>
+
+                        <div class="dropdown-menu">
+
+                            <a href="#"
+                            class="dropdown-item 
+                            {% if request.resolver_match.url_name == 'mining' %}
+                            active
+                            {% endif %}">
+
+                                <i class="fa fa-hard-hat me-2"></i>
+                                Mining
+
+                            </a>
+
+                            <a href="#"
+                            class="dropdown-item 
+                            {% if request.resolver_match.url_name == 'mineral_trading' %}
+                            active
+                            {% endif %}">
+
+                                <i class="fa fa-coins me-2"></i>
+                                Mineral Trading
+
+                            </a>
+
+                            <a href="{% url 'gold_app:travel_tours' %}"
+                            class="dropdown-item 
+                            {% if request.resolver_match.url_name == 'travel_tours' %}
+                            active
+                            {% endif %}">
+
+                                <i class="fa fa-globe-africa me-2"></i>
+                                Travels & Tours
+
+                            </a>
+
+                        </div>
+
+                    </div>
                    <a href="{% url 'gold_app:csr' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'csr' %}active{% endif %}"> CSR</a>
                    <a href="{% url 'gold_app:gallery' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}"> Gallery</a>
                     <a href="{% url 'gold_app:contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact Us</a>

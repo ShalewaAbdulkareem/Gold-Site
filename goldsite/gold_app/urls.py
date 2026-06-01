@@ -17,6 +17,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path("quote/", views.get_quote, name="quote"),
     path("gallery/", views.gallery, name="gallery"),
-  
+    path("travel-tours/", views.travel_tours, name="travel_tours"),
+    path("tour-package/<slug:slug>/", views.tour_package_detail, name="tour_package_detail",)
+
 
 ]
